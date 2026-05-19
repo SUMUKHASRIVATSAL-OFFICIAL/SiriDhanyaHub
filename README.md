@@ -130,3 +130,10 @@ Data Model Layer (Kotlin Data Classes)
 │
 ▼
 Data Source Layer (Local JSON in Assets)
+
+**Data flow:**
+Fragments read JSON from Assets folder → Parse into Kotlin data classes → Pass to Adapters → Adapters bind data to RecyclerView rows → User sees price tables, recipe cards, and health facts.
+
+---
+
+## 📂 Project Structure
