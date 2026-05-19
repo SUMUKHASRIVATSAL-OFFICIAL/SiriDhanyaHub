@@ -119,3 +119,14 @@ The app provides a unified offline-first platform with district-wise and state-w
 ## 🏗️ Architecture
 
 Siri-Dhanya Hub follows a **Fragment-Based Architecture** with the **Adapter Pattern** for clean data display separation.
+
+UI Layer (Fragments + Activities)
+│
+▼
+Adapter Layer (RecyclerView Adapters)
+│
+▼
+Data Model Layer (Kotlin Data Classes)
+│
+▼
+Data Source Layer (Local JSON in Assets)
