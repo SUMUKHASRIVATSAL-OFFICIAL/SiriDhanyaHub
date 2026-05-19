@@ -418,10 +418,4 @@ Project 74 — Android App Development using GenAI — Siri-Dhanya Hub (Agricult
   <sub>🌾 Promoting Karnataka's Navadhanya millets through technology</sub>
 </div>
 
-How to upload this README to GitHub:
-→ Go to your GitHub repository
-→ Click "Add file" → "Create new file"
-→ Name it: README.md
-→ Paste the entire content above
-→ Click "Commit changes"
-Your repository will look professional instantly! 🌾
+
