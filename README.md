@@ -136,6 +136,8 @@ Fragments read JSON from Assets folder → Parse into Kotlin data classes → Pa
 ---
 
 ## 📂 Project Structure
+
+```
 SiriDhanyaHub/
 │
 ├── app/
@@ -236,7 +238,7 @@ SiriDhanyaHub/
 ├── build.gradle.kts
 ├── settings.gradle.kts
 └── README.md
-
+```
 ## ✅ Prerequisites
 
 Before you begin, ensure you have the following installed:
