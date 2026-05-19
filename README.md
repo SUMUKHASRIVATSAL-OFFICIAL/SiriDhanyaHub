@@ -237,3 +237,184 @@ SiriDhanyaHub/
 ├── build.gradle.kts
 ├── settings.gradle.kts
 └── README.md
+
+---
+
+## ✅ Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+| Tool | Minimum Version | Download |
+|---|---|---|
+| Android Studio | Meerkat (2024.1.1) | [Download](https://developer.android.com/studio) |
+| JDK | 17 | Bundled with Android Studio |
+| Android SDK | API 24 (min) / API 36 (target) | Via SDK Manager |
+| Kotlin | 2.0.21 | Bundled with Android Studio |
+| Gradle | 9.0.1 | Auto-downloaded via wrapper |
+| Git | Latest | [Download](https://git-scm.com) |
+
+---
+
+## 📦 Dependencies
+
+All versions are managed centrally in `gradle/libs.versions.toml`.
+
+### `gradle/libs.versions.toml`
+```toml
+[versions]
+agp = "9.0.1"
+kotlin = "2.0.21"
+coreKtx = "1.18.0"
+junit = "4.13.2"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+appcompat = "1.6.1"
+material = "1.11.0"
+constraintlayout = "2.1.4"
+recyclerview = "1.3.2"
+cardview = "1.0.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+```
+
+### `app/build.gradle.kts` — Dependencies Block
+```kotlin
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
+
+    // Glide for food image loading
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // MPAndroidChart for 7-day price trend
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+}
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### Step 1 — Clone the Repository
+```bash
+git clone https://github.com/yourusername/SiriDhanyaHub.git
+cd SiriDhanyaHub
+```
+
+### Step 2 — Open in Android Studio
+1. Launch **Android Studio**
+2. Select **File → Open** and choose the `SiriDhanyaHub/` folder
+3. Wait for the IDE to index the project
+
+### Step 3 — Sync Gradle
+Click **"Sync Now"** in the notification bar, or run:
+```bash
+./gradlew build
+```
+
+### Step 4 — Run the App
+- Connect a physical Android device (API 24+) via USB with Developer Options and USB Debugging enabled
+- Press **Run ▶** (Shift + F10)
+- The app will install and launch on your device
+
+> **Note:** No internet connection is required. All data is stored locally in JSON files inside the Assets folder.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center"><b>Mandi Watch — Karnataka</b></td>
+    <td align="center"><b>Mandi Watch — India</b></td>
+    <td align="center"><b>Recipe Lab</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/ece292b8-d209-4d5b-9e0d-849c506f4ad4" width="220"/></td>
+    <td><img src="https://github.com/user-attachments/assets/cb9d932f-ebb5-4566-8acd-90157e41d919" width="220"/></td>
+    <td><img src="https://github.com/user-attachments/assets/168d216c-b5dc-4817-8d2e-f3101a37d1a0" width="220"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Health Benefits</b></td>
+    <td align="center"><b>Direct Buy</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/79776f94-ff38-416d-b444-20cf661f6100" width="220"/></td>
+    <td><img src="https://github.com/user-attachments/assets/8ee48a7d-75f9-4c4c-885d-99e3dadb634d" width="220"/></td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+## 📈 Future Enhancements
+
+| Feature | Description |
+|---|---|
+| 🔔 Price Alert Notifications | FCM-based alerts when millet price crosses threshold |
+| 🌐 Live Mandi API | Connect to Agmarknet or eNAM for real-time prices |
+| 💳 Payment Gateway | In-app payment support via Razorpay for Direct Buy |
+| 📍 Location-Based Mandi | Show nearest mandi based on farmer's GPS location |
+| 🗣️ Kannada Language Support | Full Kannada UI for semi-literate farmers |
+| 🤖 AI Recipe Suggestions | GenAI-powered recipe recommendations based on millet availability |
+| 👤 Farmer Profile | Login and profile for farmers to track prices and orders |
+| 📊 Price History Chart | Interactive 30-day price chart using MPAndroidChart |
+| ☁️ Cloud Sync | Firebase integration for real-time price updates |
+| 🎙️ Voice Assistant | Audio-based navigation for low-literacy users |
+
+---
+
+## 📄 License
+
+This project is developed for educational and internship purposes under the MindMatrix VTU Internship Program. All rights reserved by the author.
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### [Your Name Here]
+**BE in Computer Science Engineering**
+
+Android Developer · Kotlin Learner · Agriculture Tech Enthusiast
+
+MindMatrix VTU Internship Program
+Project 74 — Android App Development using GenAI — Siri-Dhanya Hub (Agriculture)
+
+[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=for-the-badge&logo=github)](https://github.com/yourusername/SiriDhanyaHub)
+
+</div>
+
+---
+
+<div align="center">
+  <sub>If you found this project helpful, please consider giving it a ⭐ on GitHub!</sub>
+  <br/>
+  <sub>🌾 Promoting Karnataka's Navadhanya millets through technology</sub>
+</div>
+
