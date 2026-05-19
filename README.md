@@ -137,3 +137,103 @@ Fragments read JSON from Assets folder → Parse into Kotlin data classes → Pa
 ---
 
 ## 📂 Project Structure
+SiriDhanyaHub/
+│
+├── app/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/com/siridhanya/hub/
+│   │       │   │
+│   │       │   ├── MainActivity.kt
+│   │       │   │     # Hosts all 4 fragments
+│   │       │   │     # BottomNavigationView setup
+│   │       │   │
+│   │       │   ├── MandiFragment.kt
+│   │       │   │     # Mandi Watch screen
+│   │       │   │     # Reads district_prices.json
+│   │       │   │     # Reads india_states.json
+│   │       │   │     # TabLayout switching
+│   │       │   │
+│   │       │   ├── RecipesFragment.kt
+│   │       │   │     # Recipe Lab screen
+│   │       │   │     # SearchView filtering
+│   │       │   │     # Google Search fallback
+│   │       │   │
+│   │       │   ├── HealthFragment.kt
+│   │       │   │     # Health Benefits screen
+│   │       │   │     # Dynamic card generation
+│   │       │   │
+│   │       │   ├── BuyFragment.kt
+│   │       │   │     # Direct Buy screen
+│   │       │   │     # FPO contact cards
+│   │       │   │
+│   │       │   ├── RecipeDetailActivity.kt
+│   │       │   │     # Full recipe detail page
+│   │       │   │     # Google Search integration
+│   │       │   │
+│   │       │   ├── DistrictAdapter.kt
+│   │       │   │     # Karnataka district price table
+│   │       │   │
+│   │       │   ├── IndiaAdapter.kt
+│   │       │   │     # India state price table
+│   │       │   │
+│   │       │   ├── RecipeAdapter.kt
+│   │       │   │     # Recipe card list
+│   │       │   │     # Click → RecipeDetailActivity
+│   │       │   │
+│   │       │   ├── FpoAdapter.kt
+│   │       │   │     # FPO contact card list
+│   │       │   │
+│   │       │   ├── MandiModels.kt
+│   │       │   │     # MilletPrice data class
+│   │       │   │     # DistrictPrice data class
+│   │       │   │     # IndiaState data class
+│   │       │   │
+│   │       │   ├── RecipeItem.kt
+│   │       │   │     # Recipe data class
+│   │       │   │
+│   │       │   └── FpoItem.kt
+│   │       │         # FPO contact data class
+│   │       │
+│   │       ├── assets/
+│   │       │   ├── district_prices.json
+│   │       │   │     # 31 Karnataka districts
+│   │       │   │     # 7 millets each with price,
+│   │       │   │     # yesterday, last7 array
+│   │       │   │
+│   │       │   └── india_states.json
+│   │       │         # 36 states and UTs
+│   │       │         # 7 millets each
+│   │       │
+│   │       └── res/
+│   │           ├── layout/
+│   │           │     ├── activity_main.xml
+│   │           │     ├── activity_recipe_detail.xml
+│   │           │     ├── fragment_mandi.xml
+│   │           │     ├── fragment_recipes.xml
+│   │           │     ├── fragment_health.xml
+│   │           │     ├── fragment_buy.xml
+│   │           │     ├── item_district.xml
+│   │           │     ├── item_india_state.xml
+│   │           │     ├── item_recipe.xml
+│   │           │     └── item_fpo.xml
+│   │           │
+│   │           ├── menu/
+│   │           │     └── bottom_nav_menu.xml
+│   │           │
+│   │           ├── drawable/
+│   │           │     └── ic_launcher_foreground.xml
+│   │           │           # Custom millet stalk logo
+│   │           │
+│   │           └── values/
+│   │                 ├── colors.xml
+│   │                 ├── strings.xml
+│   │                 └── themes.xml
+│   │
+│   └── build.gradle.kts
+│
+├── gradle/
+│   └── libs.versions.toml
+├── build.gradle.kts
+├── settings.gradle.kts
+└── README.md
