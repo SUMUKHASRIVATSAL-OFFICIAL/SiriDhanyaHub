@@ -238,8 +238,6 @@ SiriDhanyaHub/
 ├── settings.gradle.kts
 └── README.md
 
----
-
 ## ✅ Prerequisites
 
 Before you begin, ensure you have the following installed:
